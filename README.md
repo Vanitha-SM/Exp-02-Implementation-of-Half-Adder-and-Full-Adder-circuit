@@ -1,21 +1,25 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+```
+Developed by: Vanitha S
+RegisterNumber:  212222100057
+```
+# Exp 02 Implementation of Half Adder and Full Adder circuit
 
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
+
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
-### Equipments Required:
+### Components Required:
 Hardware – PCs, Cyclone II , USB flasher
 Software – Quartus prime
-Theory
+### Theory
 Adders are digital circuits that carry out addition of numbers.
 
-### Half Adder
+#### Half Adder
 Half adder is a combinational circuit that performs simple addition of two binary numbers. The input variables designate the augend and addend bits; the output variables produce the sum and carry. It is necessary to specify two output variables because the result may consist of two binary digits.
 
 Sum = A’B+AB’ =A ⊕ B Carry = AB
 
-### Full Adder
+#### Full Adder
 Full adder is a digital circuit used to calculate the sum of three binary bits. It consists of three inputs and two outputs. Two of the input variables, denoted by A and B, represent the two significant bits to be added. The third input, Cin, represents the carry from the previous lower significant position. Two outputs are necessary because the arithmetic sum of three binary digits ranges in value from 0 to 3, and binary 2 or 3 needs two digits. The two outputs are sum and carry.
 
 Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
@@ -29,26 +33,48 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 
 #### Figure -02 FULL ADDER 
 
-### Procedure
+### Procedure:
 
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+### Program:
+#### HalfAdder
+```
+module HalfAdder(A,B,sum,carry);
+input A,B;
+output sum,carry;
+assign sum= A^B;
+assign carry = A&B;
+endmodule
+```
+#### FullAdder
+```
+module FullAdder(A,B,Cin,sum,carry);
+input A,B,Cin;
+output sum,carry;
+assign sum= A^B^Cin;
+assign carry = (A&B)|((A^B)&Cin);
+endmodule
+```
 
+### RTL diagram:
+#### Half adder
+![Screenshot 2023-09-01 083640](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/32bfeadc-25bb-4eaf-ba08-675fe237a1b0)
+#### Full adder
+![Screenshot 2023-09-01 085358](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/d132e15e-7c20-43a3-bd26-6c14d38e2709)
+### Truthtable:
+#### Half adder
+![WhatsApp Image 2023-09-01 at 08 49 13](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/a856b4b7-5b64-426f-b933-ce0d298e09e5)
+#### Full adder
+![WhatsApp Image 2023-09-01 at 09 26 40](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/b0f89638-3130-4001-ac5e-4d4c4e8b2a25)
 
-### TRUTH TABLE 
+### Output Waveform:
+#### Half adder
+![Screenshot 2023-09-01 084247](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/ebbc6a8c-59a5-449e-b082-dfe7d05592ec)
+#### Full adder
+![Screenshot 2023-09-01 085930](https://github.com/Vanitha-SM/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119557985/c8e6c4cb-4cc8-4930-a737-5a7e4131133d)
+
 
 ### Result:
